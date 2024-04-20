@@ -54,8 +54,8 @@ class WordsRepositoryImpl @Inject constructor(
         val str =
             ctx.assets.open(com.example.words.data.repository.WordsRepositoryImpl.Companion.WORDS_TXT_FILE)
                 .bufferedReader().use {
-                it.readText()
-            }
+                    it.readText()
+                }
         return stringToWords(str)
     }
 

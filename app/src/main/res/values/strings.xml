@@ -6,4 +6,5 @@
     <string name="word_screen_title">Words</string>
     <string name="web_screen_title">WebView</string>
     <string name="search_screen_title">Search</string>
+    <string name="statistics_screen_title">Statistics</string>
 </resources>

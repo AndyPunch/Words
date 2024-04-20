@@ -1,7 +1,6 @@
 package com.example.words.presentation.main
 
 import android.annotation.SuppressLint
-import android.util.Log
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.slideInVertically
 import androidx.compose.animation.slideOutVertically
@@ -11,7 +10,6 @@ import androidx.compose.material.Icon
 import androidx.compose.material.Scaffold
 import androidx.compose.material.Text
 import androidx.compose.material.TopAppBar
-
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -30,6 +28,7 @@ import com.example.words.domain.entity.TopBarState
 import com.example.words.navigation.AppNavGraph
 import com.example.words.navigation.NavigationState
 import com.example.words.presentation.search.SearchScreen
+import com.example.words.presentation.statistic.StatisticsScreen
 import com.example.words.presentation.webView.WebViewScreen
 import com.example.words.presentation.word.WordScreen
 
@@ -88,7 +87,13 @@ fun MainScreen() {
                 )
             },
             statisticScreenContent = {
-
+                StatisticsScreen(
+                    navigationState.navHostController,
+                    onComposingTopBar = {
+                        topBarState = it
+                        isBottomBarVisible = true
+                    }
+                )
             }
         )
     }
